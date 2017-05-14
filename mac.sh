@@ -19,3 +19,6 @@ brew cask install michaelvillar-timer
 brew cask install jdownloader
 
 brew cask cleanup
+
+pip install todotxt-machine
+
