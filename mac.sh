@@ -18,6 +18,9 @@ brew cask install bitbar
 brew cask install michaelvillar-timer
 brew cask install jdownloader
 
+brew tap dteoh/sqa
+brew cask install slowquitapps
+
 brew cask cleanup
 
 pip install todotxt-machine
