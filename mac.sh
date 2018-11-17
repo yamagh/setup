@@ -30,6 +30,18 @@ brew cask install slowquitapps
 brew cask install clipy
 brew cask install docker
 
+# Quick Look plugins
+# https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install qlimagesize
+brew cask install webpquicklook
+brew cask install suspicious-package
+brew cask install quicklookase
+brew cask install qlvideo
+
 brew cask cleanup
 
 pip install todotxt-machine
