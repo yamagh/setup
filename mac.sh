@@ -10,8 +10,8 @@ brew install terminal-notifier
 brew install tmux
 brew install reattach-to-user-namespace
 brew install lua
-brew install vim --with-lua
-brew install macvim --with-lua --with-python3 --with-override-system-vim
+#brew install vim --with-lua
+brew unlink vim && brew install macvim --with-lua --with-python3 --with-override-system-vim
 brew install imagemagick
 brew install rbenv
 brew install pyenv
