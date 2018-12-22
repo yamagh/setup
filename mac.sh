@@ -5,6 +5,7 @@ brew upgrade
 
 brew install ghq
 brew install hub
+brew install unrar
 brew install peco
 brew install terminal-notifier
 brew install tmux
