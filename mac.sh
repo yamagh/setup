@@ -16,6 +16,7 @@ brew unlink vim && brew install macvim --with-lua --with-python3 --with-override
 brew install imagemagick
 brew install rbenv
 brew install pyenv
+brew install poppler
 
 brew cask install google-chrome
 brew cask install dropbox
