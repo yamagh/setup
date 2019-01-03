@@ -52,4 +52,5 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 
 ghq get kmyk/online-judge-tools
+ghq get yamagh/yamagh.github.io
 
