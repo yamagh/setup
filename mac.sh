@@ -17,6 +17,7 @@ brew install imagemagick
 brew install rbenv
 brew install pyenv
 brew install poppler
+brew install pngquant
 
 brew cask install google-chrome
 brew cask install dropbox
