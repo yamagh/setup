@@ -33,8 +33,7 @@ brew cask install slowquitapps
 brew cask install clipy
 brew cask install docker
 
-# Quick Look plugins
-# https://github.com/sindresorhus/quick-look-plugins
+# Quick Look plugins - https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install qlmarkdown
@@ -54,4 +53,12 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 ghq get kmyk/online-judge-tools
 ghq get yamagh/yamagh.github.io
+
+# Take screencaptures per minutes with cron
+crontab -l > tmpcrontab
+cat <<'EOF' >> tmpcrontab
+0/1 * * * * [ 60 -lt `/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}'` ] && exit; d=`date +/Users/yamagh/Pictures/ScreenLog/\%Y/\%m/\%d`; f=$d/`date +\%Y-\%m-\%d-\%H\%M\%S`.png; sudo -u yamagh mkdir -p $d && sudo -u yamagh /usr/sbin/screencapture -x $f && /usr/local/bin/pngquant --speed 1 --ext .png --force $f
+EOF
+uniq tmpcrontab tmp2crontab && crontab tmp2crontab && rm tmpcrontab && rm tmp2crontab
+crontab -l
 

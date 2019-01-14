@@ -1,0 +1,1 @@
+0/1 * * * * [ 60 -lt `/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}'` ] && exit; d=`date +/Users/yamagh/Pictures/ScreenLog/\%Y/\%m/\%d`; f=$d/`date +\%Y-\%m-\%d-\%H\%M\%S`.png; sudo -u yamagh mkdir -p $d && sudo -u yamagh /usr/sbin/screencapture -x $f && /usr/local/bin/pngquant --speed 1 --ext .png --force $f
