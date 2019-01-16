@@ -57,7 +57,7 @@ ghq get yamagh/yamagh.github.io
 # Take screencaptures per minutes with cron
 crontab -l > tmpcrontab
 cat <<'EOF' >> tmpcrontab
-0/1 * * * * [ 60 -lt `/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}'` ] && exit; d=`date +/Users/yamagh/Pictures/ScreenLog/\%Y/\%m/\%d`; f=$d/`date +\%Y-\%m-\%d-\%H\%M\%S`.png; sudo -u yamagh mkdir -p $d && sudo -u yamagh /usr/sbin/screencapture -x $f && /usr/local/bin/pngquant --speed 1 --ext .png --force $f
+0/1 * * * * [ 60 -lt `/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/awk '/HIDIdleTime/ {print int($NF/1000000000); exit}'` ] && exit; d=`date +/Users/yamagh/Pictures/ScreenLog/\%Y/\%m/\%d`; f=$d/`date +screen-log-\%Y-\%m-\%d-\%H\%M\%S`.png; sudo -u yamagh mkdir -p $d && sudo -u yamagh /usr/sbin/screencapture -x $f && /usr/local/bin/pngquant --speed 1 --ext .png --force $f
 EOF
 uniq tmpcrontab tmp2crontab && crontab tmp2crontab && rm tmpcrontab && rm tmp2crontab
 crontab -l
