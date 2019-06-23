@@ -62,3 +62,21 @@ EOF
 uniq tmpcrontab tmp2crontab && crontab tmp2crontab && rm tmpcrontab && rm tmp2crontab
 crontab -l
 
+
+# Github Setting
+
+ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -N ""
+cat << _EOF_ > ~/.ssh/config
+Host github github.com
+  HostName github.com
+  IdentityFile ~/.ssh/id_git_rsa_github
+  User git
+_EOF_
+
+echo "**************************************"
+echo "* Add below ssh public key to Github *"
+echo "* https://github.com/settings/keys   *"
+echo "**************************************"
+cat ~/.ssh/id_rsa_github.pub
+echo "**************************************"
+
